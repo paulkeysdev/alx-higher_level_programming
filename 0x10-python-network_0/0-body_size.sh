@@ -1,3 +1,3 @@
 #!/bin/bash
-url=$1; curl -sI $url | grep -i 'Content-Length' | awk '{print $2}' | tr -d '\r' | xargs -I {} echo "Size of the response body: {} bytes"
-
+# Bash script that takes in a URL, sends a request to that URL
+curl -sI "$1" | grep 'Content-Length' | awk '{print $2}'
